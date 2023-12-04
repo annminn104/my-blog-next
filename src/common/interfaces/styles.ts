@@ -47,3 +47,19 @@ type AlignItemsPositional = 'center' | 'start' | 'end' | 'flex-start' | 'flex-en
 type AlignItemsBaseline = 'baseline' | 'first baseline' | 'last baseline' | 'safe center' | 'unsafe center'
 
 export type AlignItems = 'normal' | 'stretch' | AlignItemsPositional | AlignItemsBaseline | GlobalValues
+
+type FontWeightRelative = 'lighter' | 'bolder'
+
+export type FontWeight =
+  | 'normal'
+  | 'bold'
+  | 100
+  | 200
+  | 300
+  | 400
+  | 600
+  | 700
+  | 800
+  | 900
+  | FontWeightRelative
+  | GlobalValues

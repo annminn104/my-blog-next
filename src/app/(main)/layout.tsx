@@ -1,7 +1,6 @@
-import Header from '@/components/organisms/Header'
-import { Box, Container } from '@chakra-ui/react'
 import type { Metadata } from 'next'
 import React from 'react'
+import MainClientComponent from './client'
 
 export const metadata: Metadata = {
   title: 'My Blog Next',
@@ -9,10 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <Container as='div' maxW='full'>
-      <Header />
-      <Box as='main'>{children}</Box>
-    </Container>
-  )
+  return <MainClientComponent>{children}</MainClientComponent>
 }

@@ -1,9 +1,5 @@
-import React from 'react'
+import Slider from '@/components/organisms/Slider'
 
-export default function Home() {
-  return (
-    <React.Fragment>
-      <h1>Hello world!!</h1>
-    </React.Fragment>
-  )
+export default function HomePage() {
+  return <Slider />
 }

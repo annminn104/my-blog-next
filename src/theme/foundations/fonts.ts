@@ -1,9 +1,9 @@
 import { ChakraTheme, DeepPartial, Theme } from '@chakra-ui/react'
+import '@fontsource/inter'
 
 const overrideFonts: DeepPartial<Theme['fonts']> = {
-  body: 'system-ui, sans-serif',
-  heading: 'Georgia, serif',
-  mono: 'Menlo, monospace'
+  body: "'Inter' sans-serif",
+  heading: "'Inter' sans-serif"
 }
 
 const overrideFontSizes: DeepPartial<Theme['fontSizes']> = {

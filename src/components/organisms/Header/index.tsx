@@ -13,15 +13,17 @@ function Header() {
 
   return (
     <S.HeaderWrap as='header'>
-      <S.HeaderLogo>
-        <Logo />
-      </S.HeaderLogo>
-      <S.HeaderNavigation>
-        <Navigation />
-      </S.HeaderNavigation>
-      <S.HeaderTheme as='button' onClick={toggleColorMode}>
-        <Icon as={colorMode === ModeEnum.Light ? MoonIcon : SunIcon} boxSize={22} />
-      </S.HeaderTheme>
+      <S.HeaderContainer maxW='full'>
+        <S.HeaderLogo>
+          <Logo />
+        </S.HeaderLogo>
+        <S.HeaderNavigation>
+          <Navigation />
+        </S.HeaderNavigation>
+        <S.HeaderTheme as='button' onClick={toggleColorMode}>
+          <Icon as={colorMode === ModeEnum.Light ? MoonIcon : SunIcon} boxSize={22} />
+        </S.HeaderTheme>
+      </S.HeaderContainer>
     </S.HeaderWrap>
   )
 }

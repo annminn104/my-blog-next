@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Navigation } from 'swiper/modules'
+import { Pagination, Navigation, Mousewheel, Parallax } from 'swiper/modules'
 import * as S from './styles'
 
 import 'swiper/scss'
@@ -15,13 +15,13 @@ function Slider() {
     <S.SwiperWrap>
       <Swiper
         slidesPerView={1}
-        spaceBetween={30}
-        loop={true}
-        pagination={{
-          type: 'progressbar'
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
+        speed={1500}
+        loop
+        parallax
+        mousewheel
+        navigation
+        pagination={{ type: 'progressbar' }}
+        modules={[Pagination, Navigation, Mousewheel, Parallax]}
         className='swiper-slider__fullscreen'
       >
         {SliderMock.map((slide, index) => (

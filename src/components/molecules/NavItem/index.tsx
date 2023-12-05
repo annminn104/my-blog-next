@@ -19,17 +19,24 @@ function NavItem({ isHover = false, button, items }: INavItemProps) {
     <S.MenuWrap>
       {isHover ? (
         <S.MenuDropdown isOpen={isOpen}>
-          <S.MenuDropdownButton as={Button} variant='ghost' onMouseEnter={onOpen} onMouseLeave={onClose}>
+          <S.MenuDropdownButton
+            as={Button}
+            variant='ghost'
+            onMouseEnter={onOpen}
+            onMouseLeave={onClose}
+            onMouseOver={onOpen}
+            onMouseOut={onClose}
+          >
             {button}
           </S.MenuDropdownButton>
           <S.MenuDropdownMask>
-            <S.MenuDropdownList onMouseEnter={onOpen} onMouseLeave={onClose}>
+            <S.MenuDropdownList onMouseEnter={onOpen} onMouseLeave={onClose} onMouseOver={onOpen} onMouseOut={onClose}>
               {menuList(items)}
             </S.MenuDropdownList>
           </S.MenuDropdownMask>
         </S.MenuDropdown>
       ) : (
-        <S.MenuDropdown>
+        <S.MenuDropdown isOpen={isOpen}>
           <S.MenuDropdownButton as={Button} variant='ghost'>
             {button}
           </S.MenuDropdownButton>

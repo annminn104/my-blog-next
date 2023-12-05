@@ -17,11 +17,30 @@ export const MenuDropdownMask = chakra(Box, {
     paddingTop: '8px',
     div: {
       position: 'relative',
-      paddingTop: '8px'
+      marginTop: '-8px',
+      backgroundColor: 'transparent',
+      border: 'none',
+      boxShadow: 'none'
     }
   }
 })
 
-export const MenuDropdownList = chakra(MenuList, {})
+export const MenuDropdownList = chakra(MenuList, {
+  baseStyle: {}
+})
 
-export const MenuDropDownItem = chakra(MenuItem, {})
+export const MenuDropDownItem = chakra(MenuItem, {
+  baseStyle: {
+    backgroundColor: 'white',
+    color: 'black',
+    _first: {
+      marginTop: '16px',
+      borderTopLeftRadius: '4px',
+      borderTopRightRadius: '4px'
+    },
+    _last: {
+      borderBottomLeftRadius: '4px',
+      borderBottomRightRadius: '4px'
+    }
+  }
+})

@@ -32,8 +32,19 @@ export const SliderItemTitle = chakra(Heading, {
     ...StyleUtils.fontBase('8vw', 'normal', 900),
     marginLeft: '-12px',
     display: 'inline-block',
-    verticalAlign: 'middle'
+    verticalAlign: 'middle',
+    _dark: {
+      color: 'white'
+    }
   }
 })
 
-export const SliderItemContent = chakra(Text, { baseStyle: { fontSize: 'xl', color: 'whiteAlpha.700' } })
+export const SliderItemContent = chakra(Text, {
+  baseStyle: {
+    fontSize: 'xl',
+    color: 'whiteAlpha.700',
+    _dark: {
+      color: 'whiteAlpha.700'
+    }
+  }
+})

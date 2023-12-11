@@ -1,7 +1,7 @@
 'use client'
 
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import React, { useState } from 'react'
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation, Mousewheel, Parallax } from 'swiper/modules'
 import * as S from './styles'
 
@@ -9,15 +9,25 @@ import 'swiper/scss'
 import 'swiper/scss/pagination'
 import 'swiper/scss/navigation'
 import { SliderMock } from '@/common/mocks/slider'
-import { Icon } from '@chakra-ui/react'
+import { Box, Icon } from '@chakra-ui/react'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 
 function Slider() {
+  const [activeIndex, setActiveIndex] = useState<number>(0)
+
+  const handleActiveIndexSlide = (element: SwiperClass) => {
+    console.log(element)
+    setActiveIndex(element.realIndex)
+  }
+
+  console.log('activeIndex', activeIndex)
+
   return (
     <S.SwiperWrap>
       <Swiper
         slidesPerView={1}
         speed={1500}
+        onActiveIndexChange={handleActiveIndexSlide}
         loop
         parallax
         mousewheel
@@ -36,6 +46,9 @@ function Slider() {
           <S.SwiperArrowBtn situation='right' className='arrow-right' icon={<Icon as={FiArrowRight} />} />
         </S.SwiperArrow>
       </Swiper>
+      <S.SwiperIndex>
+        {activeIndex}/{SliderMock.length}
+      </S.SwiperIndex>
     </S.SwiperWrap>
   )
 }

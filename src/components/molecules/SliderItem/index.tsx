@@ -22,13 +22,13 @@ function SliderItem({ type, src, tag, title, content, button }: ISliderItemProps
     <S.SliderItemWrap>
       {renderImageWithType(type, src, title)}
       <S.SliderText maxW='full'>
-        <S.SliderItemTag as='h3' data-swiper-parallax='2500'>
+        <S.SliderItemTag as='h3' data-swiper-parallax='3100'>
           {tag}
         </S.SliderItemTag>
-        <S.SliderItemTitle as='h1' data-swiper-parallax='3000'>
+        <S.SliderItemTitle as='h1' data-swiper-parallax='3500'>
           {title}
         </S.SliderItemTitle>
-        <S.SliderItemContent noOfLines={3} dangerouslySetInnerHTML={{ __html: content }} data-swiper-parallax='2500' />
+        <S.SliderItemContent noOfLines={3} dangerouslySetInnerHTML={{ __html: content }} data-swiper-parallax='3100' />
       </S.SliderText>
     </S.SliderItemWrap>
   )
